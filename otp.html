@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<h2>OTP Verification</h2>
+
+<form method="POST">
+
+<input type="text" name="otp" placeholder="Enter OTP" required>
+
+<button type="submit">Verify</button>
+
+</form>
+
+{% if error %}
+<p class="alert">{{error}}</p>
+{% endif %}
+
+<a href="/login">Back</a>
+
+</div>
+
+{% endblock %}

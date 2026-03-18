@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="topbar">
+
+<span>Welcome {{user}}</span>
+
+<a href="/logout">
+<button class="logout-btn">Logout</button>
+</a>
+
+</div>
+
+<div class="container">
+
+<h2>Cryptography Control Panel</h2>
+
+<form method="POST">
+
+<textarea name="message" placeholder="Enter message or ciphertext"></textarea>
+
+<br>
+
+<button name="action" value="encrypt">Encrypt</button>
+
+<button name="action" value="decrypt">Decrypt</button>
+
+</form>
+
+{% if error %}
+<p class="alert">{{error}}</p>
+{% endif %}
+
+{% if encrypted %}
+
+<div class="result">
+
+<h3>Encrypted Ciphertext</h3>
+
+<p>{{encrypted}}</p>
+
+</div>
+
+{% endif %}
+
+{% if decrypted %}
+
+<div class="result">
+
+<h3>Decrypted Message</h3>
+
+<p>{{decrypted}}</p>
+
+</div>
+
+{% endif %}
+
+<div class="log-panel">
+
+<h3>Security Activity Log</h3>
+
+<div class="log-box">
+
+{% for log in logs %}
+<p>> {{log}}</p>
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
