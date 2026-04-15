@@ -1,100 +1,87 @@
-# CIPHER PANEL Web Application Documentation
+# Project Documentation
 
 ## Project Overview
-CIPHER PANEL is a web application designed for secure data encryption and decryption. It provides users with the ability to protect sensitive information using advanced cryptographic algorithms.
+This project is a web application for managing cipher panel functionalities, aimed at providing a user-friendly interface for interacting with various cipher algorithms.
 
 ## Architecture
-The application follows a multi-tier architecture, consisting of a client-side interface, a server-side API, and a database for the persistence of data. The client-side is built using React, and the server-side uses Node.js with Express.
+- **Frontend:** Built using React.js for dynamic user interfaces.
+- **Backend:** Node.js and Express for RESTful API services.
+- **Database:** MongoDB for data storage, ensuring scalability and flexibility.
 
 ## Installation
-1. Clone the repository using `git clone https://github.com/sunilsolanky230-ux/CIPHER-PANEL-WEB-APPLICATION.git`
-2. Navigate to the project directory: `cd CIPHER-PANEL-WEB-APPLICATION`
-3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sunilsolanky230-ux/CIPHER-PANEL-WEB-APPLICATION.git
+   cd CIPHER-PANEL-WEB-APPLICATION
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the application:**
+   ```bash
+   npm start
+   ```
 
 ## Core Features
-- Data Encryption and Decryption
-- User Authentication
-- Role-Based Access Control
-- Interactive User Interface
-- API Integrations
+- User authentication and authorization
+- Multiple cipher algorithms implemented
+- Interactive UI for easy access to functionalities
 
-## Module-by-Module Explanation
-### User Module
-- **Registration**: Users can create an account with an email and password.  
-  ```javascript
-  const registerUser = (email, password) => {
-      // registration logic
-  };
-  ```
-- **Login**: Authentication for user sessions.  
-  ```javascript
-  const loginUser = (email, password) => {
-      // login logic
-  };
-  ```
+## Complete Module Explanations
+### Authentication Module
+Handles user login, registration and session management.
 
-### Encryption Module
-- **Encrypt Data**: Users can encrypt data using AES algorithm.  
-  ```javascript
-  const encryptData = (data) => {
-      // encryption logic
-  };
-  ```
-
-### Decryption Module
-- **Decrypt Data**: Users can decrypt previously encrypted data.  
-  ```javascript
-  const decryptData = (encryptedData) => {
-      // decryption logic
-  };
-  ```
+### Cipher Algorithms Module
+This module includes implementations for various algorithms like:
+- Caesar Cipher
+- Vigenère Cipher
+- AES Encryption
 
 ## Database Design
-The database is designed using MongoDB, with collections for users and their encrypted data. Each user has a unique ID, and their data is linked through this ID.
+The database schema is designed as follows:
+- **Users:** Stores user information with hashed passwords.
+- **Ciphers:** Contains records of cipher operations performed by users.
 
 ## Security Features
-- Password Hashing (bcrypt)
-- HTTPS Protocol for secure communication
-- JWT for user authentication
+- Password hashing using bcrypt
+- Input validation and sanitization
 
 ## User Flow
-1. User registers for an account.
-2. User logs in to access the dashboard.
-3. User can encrypt or decrypt data.
-4. User can log out.
+1. Users register or log in.
+2. Users select a cipher algorithm.
+3. Users input the required data for encryption/decryption.
+4. Users receive the results in a user-friendly manner.
 
 ## API Endpoints
-- POST `/api/register`: User registration.
-- POST `/api/login`: User login.
-- POST `/api/encrypt`: Encrypt data.
-- POST `/api/decrypt`: Decrypt data.
+- **POST /api/users/register** - User registration
+- **POST /api/users/login** - User login
+- **GET /api/ciphers** - Retrieve available ciphers
 
 ## Frontend Components
-The frontend is built using React components organized in a modular structure for maintainability.
+- **LoginForm:** Handles user authentication.
+- **CipherSelector:** Provides options for users to choose ciphers.
 
 ## Code Explanations
-Key functionalities are modularized to enhance readability and reusability in codebase.
+Code is structured in a modular format for better maintenance and understandability.
+
+## CSS Styling
+Styling is handled using CSS Modules for scoped styling.
+
+## Matrix Animation
+The matrix animation adds a visual effect during encryption processes, enhancing user experience.
 
 ## Error Handling
-Robust error handling is implemented to catch issues during user inputs and API responses.
+Robust error handling is implemented across both frontend and backend, ensuring users are notified of any issues.
 
 ## Troubleshooting
-Common issues and their solutions:
-- **Issue**: User cannot log in.
-  **Solution**: Check if caps lock is on or reset the password.
+Common issues and solutions are documented in a separate FAQ section.
 
 ## Future Enhancements
-- Adding multi-language support.
-- Implementing offline functionality.
+- Implementation of more cipher algorithms
+- Improved UI/UX based on user feedback
+- Enhanced security features
 
-## Dependencies
-- React
-- Node.js
-- Express
-- MongoDB
-- bcrypt
-- jsonwebtoken 
+---
 
-## Contact Information
-For further inquiries, contact: [email@example.com]
+*Last Updated: 2026-04-15 16:08:44 UTC*
